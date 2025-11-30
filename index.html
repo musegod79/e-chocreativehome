@@ -10,7 +10,7 @@
     body {
       margin: 0;
       padding: 40px 16px 60px;
-      background-color: #f6f1eb; /* soft ivory */
+      background: linear-gradient(180deg, #f7f2ec 0%, #f3ece5 100%);
       color: #3b3330;
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
                    sans-serif;
@@ -19,40 +19,61 @@
     }
 
     .container {
-      max-width: 820px;
+      max-width: 880px;
       margin: 0 auto;
     }
 
-    /* Headline uses serif for elegance */
-    h1 {
-      font-family: "Georgia", "Times New Roman", serif;
-      font-size: 36px;
-      letter-spacing: 1.6px;
-      margin: 0 0 10px;
-      color: #7b4b4b; /* rose-brown tone */
+    /* Hero card at top */
+    .hero {
+      background-color: #fdf8f4;
+      border-radius: 26px;
+      padding: 28px 22px 30px;
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.04);
+      border: 1px solid rgba(200, 150, 130, 0.35);
+      margin-bottom: 30px;
     }
 
-    .subtitle {
-      font-size: 15px;
+    h1 {
+      font-family: "Georgia", "Times New Roman", serif;
+      font-size: 34px;
+      letter-spacing: 1.8px;
+      margin: 0 0 8px;
+      color: #6f4141; /* rose-brown tone */
+    }
+
+    .tagline {
+      font-size: 14px;
       color: #8f766d;
-      margin-bottom: 40px;
+      margin: 0 0 10px;
+    }
+
+    .hero-text {
+      font-size: 14px;
+      color: #9b867d;
+      margin: 4px 0 0;
     }
 
     h2 {
       font-family: "Georgia", "Times New Roman", serif;
       font-size: 22px;
-      margin: 0 0 12px;
+      margin: 0 0 10px;
       color: #7b4b4b;
     }
 
     /* Each platform section as a soft card */
     .section {
       background-color: #fdf8f4;
-      border-radius: 20px;
-      padding: 24px 18px 28px;
-      margin-top: 26px;
-      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.03);
-      border: 1px solid rgba(200, 150, 130, 0.25); /* rose-gold line */
+      border-radius: 22px;
+      padding: 22px 18px 26px;
+      margin-top: 24px;
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.03);
+      border: 1px solid rgba(200, 150, 130, 0.25);
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
+    }
+
+    .section:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.05);
     }
 
     .section p.desc {
@@ -69,8 +90,24 @@
       margin: 0 auto;
     }
 
+    .apple-link {
+      margin-top: 12px;
+      display: inline-block;
+      padding: 10px 20px;
+      font-size: 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(140, 105, 95, 0.5);
+      color: #6c4a44;
+      text-decoration: none;
+      background-color: #f8f0ea;
+    }
+
+    .apple-link:hover {
+      background-color: #f2e6dd;
+    }
+
     .footer {
-      margin-top: 50px;
+      margin-top: 46px;
       font-size: 13px;
       color: #a89488;
     }
@@ -80,13 +117,16 @@
         padding: 28px 12px 40px;
       }
       h1 {
-        font-size: 28px;
+        font-size: 26px;
       }
       h2 {
         font-size: 20px;
       }
+      .hero {
+        padding: 22px 16px 24px;
+      }
       .section {
-        padding: 20px 14px 24px;
+        padding: 18px 14px 22px;
       }
     }
   </style>
@@ -94,9 +134,16 @@
 
 <body>
   <div class="container">
-    
-    <h1>E.CHO CREATIVE HOME</h1>
-    <p class="subtitle">Music · Healing · Memory · Story</p>
+
+    <!-- Hero -->
+    <div class="hero">
+      <h1>E.CHO CREATIVE HOME</h1>
+      <p class="tagline">Music · Healing · Memory · Story</p>
+      <p class="hero-text">
+        A small home for songs, stories, and quiet moments —  
+        connecting music and writing with a healing heart.
+      </p>
+    </div>
 
     <!-- 🎧 Spotify Artist -->
     <div class="section">
@@ -105,6 +152,23 @@
       <iframe src="https://open.spotify.com/embed/artist/6Ar4fb6JztM8u3qZFENLuD"
               height="352"
               allow="encrypted-media">
+      </iframe>
+    </div>
+
+    <!-- ▶️ YouTube Playlist Embed (위로 이동 + 문구에 링크) -->
+    <div class="section">
+      <h2>Watch on YouTube</h2>
+      <p class="desc">
+        <a href="https://music.youtube.com/channel/UCxnb5d70VoubGp468bHbBdA" 
+           target="_blank" 
+           style="color:#7b4b4b; text-decoration:none; font-weight:600;">
+          Watch E.CHO’s official music on YouTube Music →
+        </a>
+      </p>
+      <iframe height="315"
+              src="https://www.youtube.com/embed/videoseries?list=OLAK5uy_lPSRKyvah3W2HDlra1C5l9zpWTvSa-zyk"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen>
       </iframe>
     </div>
 
@@ -118,17 +182,11 @@
               sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation"
               src="https://embed.music.apple.com/kr/artist/e-cho/1851680455">
       </iframe>
-    </div>
-
-    <!-- ▶️ YouTube Video Embed -->
-    <div class="section">
-      <h2>Watch on YouTube</h2>
-      <p class="desc">Watch E.CHO’s official music on YouTube.</p>
-      <iframe height="315"
-              src="https://www.youtube.com/embed/ISO1vK4jAA0"
-              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen>
-      </iframe>
+      <a class="apple-link"
+         href="https://music.apple.com/kr/artist/e-cho/1851680455"
+         target="_blank">
+        Open in Apple Music
+      </a>
     </div>
 
     <p class="footer">© 2025 E.CHO Creative Home · All Rights Reserved</p>
@@ -136,3 +194,4 @@
   </div>
 </body>
 </html>
+
