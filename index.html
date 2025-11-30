@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>E.CHO Creative Home – Music · Healing · Memory · Story</title>
 
-  <!-- 폰트 -->
+  <!-- 폰트 (선택사항이지만 있으면 훨씬 예쁩니다) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -13,11 +13,11 @@
   <style>
     :root {
       /* metallic rose-gold palette */
-      --bg: #f6efe7;
+      --bg: #f6efe7;        /* warm ivory */
       --card: #ffffff;
-      --text-main: #5a3328;
-      --text-sub: #9b6c57;
-      --accent: #b9765b;
+      --text-main: #5a3328; /* deep rose-brown */
+      --text-sub: #9b6c57;  /* soft rose-gold brown */
+      --accent: #b9765b;    /* metallic rose-gold */
       --accent-soft: #e9c3a8;
       --shadow-soft: 0 14px 40px rgba(0, 0, 0, 0.08);
       --radius-lg: 26px;
@@ -54,6 +54,7 @@
       border-radius: var(--radius-lg);
       padding: 32px 26px 28px;
       margin-bottom: 34px;
+      /* 그라데이션 제거하고 단색으로 조금 더 짙게 */
       background: #cba08a;
       color: #fff;
       position: relative;
@@ -73,6 +74,7 @@
       opacity: 0.6;
     }
 
+    /* 한 줄짜리 타이틀: E.CHO CREATIVE HOME */
     .hero-title {
       font-family: "Playfair Display", "Georgia", serif;
       font-size: 32px;
@@ -89,7 +91,7 @@
     }
 
     .hero-summary {
-      font-size: 17px;
+      font-size: 17px;     /* ← 글자 키움 */
       line-height: 1.8;
       opacity: 0.98;
       margin-bottom: 22px;
@@ -97,7 +99,7 @@
     }
 
     .hero-tagline {
-      font-size: 18px;
+      font-size: 18px;     /* 메인 슬로건 크게 */
       letter-spacing: 4px;
       text-transform: uppercase;
       opacity: 0.99;
@@ -152,16 +154,18 @@
       font-size: 22px;
       color: var(--accent);
       margin: 0 0 6px;
+      text-align: left;
     }
 
     .section-desc {
       font-size: 13px;
       color: var(--text-sub);
       margin-bottom: 16px;
+      text-align: left;
       max-width: 520px;
     }
 
-    /* GRID */
+    /* PLATFORM GRID */
     .platform-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -222,9 +226,38 @@
       transform: translateY(1px);
     }
 
-    /* ▼ 플랫폼별 색상 커스텀 ------------------------------------------- */
+    /* ABOUT / FOOTER */
+    .about-card {
+      background: var(--card);
+      border-radius: var(--radius-md);
+      padding: 20px 18px 18px;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(185, 118, 91, 0.12);
+      margin-top: 10px;
+      font-size: 13px;
+      color: var(--text-main);
+      line-height: 1.8;
+    }
 
-    /* Spotify */
+    .about-card p + p {
+      margin-top: 8px;
+    }
+
+    footer {
+      margin-top: 40px;
+      font-size: 12px;
+      color: var(--text-sub);
+      text-align: center;
+    }
+
+    footer span {
+      color: var(--accent);
+      font-weight: 500;
+    }
+
+    /* ▼ 플랫폼별 색상 커스텀 -------------------------------------------------- */
+
+    /* Spotify – 세이지 그린 계열 */
     .platform-card.spotify {
       border-color: rgba(29, 185, 84, 0.28);
       background: linear-gradient(135deg, #ffffff, #eef9f2);
@@ -233,7 +266,7 @@
       color: #1db954;
     }
 
-    /* Apple */
+    /* Apple Music – 소프트 체리 로즈 */
     .platform-card.apple {
       border-color: rgba(250, 46, 87, 0.28);
       background: linear-gradient(135deg, #ffffff, #faeef2);
@@ -242,19 +275,16 @@
       color: #fa2e57;
     }
 
-    /* ★ YouTube Music — 보라 테마 */
+    /* YouTube Music – 톤다운 레드 */
     .platform-card.youtube {
-      border-color: rgba(120, 78, 200, 0.65);
-      background: linear-gradient(135deg, #f8f4ff, #eee5ff);
+      border-color: rgba(140, 110, 200, 0.75);
+      background: linear-gradient(135deg, #faf6ff, #efe7ff);
     }
     .platform-card.youtube .platform-name {
-      color: #7a42c8;
+      color: #d62828;
     }
-    .platform-card.youtube .btn-link {
-      border-color: rgba(120, 78, 200, 0.45);
-      background: linear-gradient(135deg, #fbf7ff, #f2eaff);
-      color: #7a42c8;
-    }
+
+    /* ---------------------------------------------------------------------- */
 
     @media (max-width: 780px) {
       .platform-grid {
@@ -282,11 +312,12 @@
 
 <body>
   <div class="wrap">
-
     <!-- HERO -->
     <section class="hero">
       <h1 class="hero-title">E.CHO CREATIVE HOME</h1>
+
       <div class="hero-line"></div>
+
       <div class="hero-summary">
         A home for those moved by the echo —<br />
         a place they are invited to, and always find their way back.
@@ -315,47 +346,62 @@
     <!-- PLATFORMS -->
     <section class="section" id="listen">
       <h2>Listen</h2>
-
       <p class="section-desc">
         Choose a platform you already use and follow E.CHO there.
         New singles will keep unfolding, one by one.
       </p>
 
       <div class="platform-grid">
-
         <!-- Spotify -->
-        <a class="platform-card spotify"
-           href="https://open.spotify.com/artist/6Ar4fb6JztM8u3qZFENLuD"
-           target="_blank">
+        <a
+          class="platform-card spotify"
+          href="https://open.spotify.com/artist/6Ar4fb6JztM8u3qZFENLuD"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <div class="platform-name">Spotify</div>
-          <div class="platform-desc">Stream the latest releases and add them to your playlists.</div>
+          <div class="platform-desc">
+            Stream the latest releases and add them to your playlists.
+          </div>
           <div class="btn-link">
-            <span class="icon">➝</span><span>Open in Spotify</span>
+            <span class="icon">➝</span>
+            <span>Open in Spotify</span>
           </div>
         </a>
 
         <!-- Apple Music -->
-        <a class="platform-card apple"
-           href="https://music.apple.com/kr/artist/e-cho/1851680455"
-           target="_blank">
+        <a
+          class="platform-card apple"
+          href="https://music.apple.com/kr/artist/e-cho/1851680455"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <div class="platform-name">Apple Music</div>
-          <div class="platform-desc">Listen on Apple Music and keep the songs in your library.</div>
+          <div class="platform-desc">
+            Listen on Apple Music and keep the songs in your library.
+          </div>
           <div class="btn-link">
-            <span class="icon">➝</span><span>Open in Apple</span>
+            <span class="icon">➝</span>
+            <span>Open in Apple</span>
           </div>
         </a>
 
         <!-- YouTube Music -->
-        <a class="platform-card youtube"
-           href="https://music.youtube.com/channel/UCxnb5d70VoubGp468bHbBdA"
-           target="_blank">
+        <a
+          class="platform-card youtube"
+          href="https://music.youtube.com/channel/UCxnb5d70VoubGp468bHbBdA"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <div class="platform-name">YouTube Music</div>
-          <div class="platform-desc">Play the album on YouTube Music, with video when available.</div>
+          <div class="platform-desc">
+            Play the album on YouTube Music, with video when available.
+          </div>
           <div class="btn-link">
-            <span class="icon">➝</span><span>Open in YT Music</span>
+            <span class="icon">➝</span>
+            <span>Open in YT Music</span>
           </div>
         </a>
-
       </div>
 
       <div class="about-card">
@@ -364,20 +410,18 @@
           late-night drives, small routines, and the hours when you can’t sleep or think much.
         </p>
         <p>
-          This page is simple by design—
+          This page is simple by design— 
           a small, steady homepage for
           <strong>music, healing, memory, and story</strong>,
           where you can always come back.
         </p>
       </div>
-
     </section>
 
     <footer>
       <span>© 2025 E.CHO Creative Home.</span>
       &nbsp;All songs & words by EUN&nbsp;CHO.
     </footer>
-
   </div>
 </body>
 </html>
