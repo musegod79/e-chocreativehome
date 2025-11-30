@@ -8,11 +8,14 @@
   <!-- 폰트 -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet"
+  >
 
   <style>
     :root {
-      --bg: #f6efe7;        
+      --bg: #f6efe7;
       --card: #ffffff;
       --text-main: #5a3328;
       --text-sub: #9b6c57;
@@ -21,9 +24,17 @@
       --shadow-soft: 0 14px 40px rgba(0, 0, 0, 0.08);
       --radius-lg: 26px;
       --radius-md: 18px;
+
+      --spotify-bg: #f2f7f3;
+      --apple-bg: #f4f2f7;
+      --yt-bg: #fff4f2; /* 유튜브 블록 배경색 */
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
     body {
       margin: 0;
@@ -31,9 +42,13 @@
       background: radial-gradient(circle at top left, #fdf7f0 0, var(--bg) 40%, #f1e3d7 100%);
       color: var(--text-main);
       -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
     }
 
-    a { text-decoration: none; color: inherit; }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
 
     .wrap {
       max-width: 960px;
@@ -60,4 +75,226 @@
       top: -80px;
       width: 220px;
       height: 220px;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.7);
+      box-shadow:
+        0 0 0 14px rgba(255, 255, 255, 0.12),
+        0 0 40px rgba(0, 0, 0, 0.18);
+      opacity: 0.7;
+    }
+
+    .hero-eyebrow {
+      font-size: 0.8rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      opacity: 0.85;
+      margin-bottom: 10px;
+    }
+
+    .hero-title {
+      font-family: "Playfair Display", "Times New Roman", serif;
+      font-size: 2rem;
+      line-height: 1.22;
+      margin-bottom: 8px;
+    }
+
+    @media (min-width: 768px) {
+      .hero-title {
+        font-size: 2.4rem;
+      }
+    }
+
+    .hero-subtitle {
+      font-size: 1.05rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      opacity: 0.9;
+      margin-bottom: 16px;
+    }
+
+    .hero-text {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      max-width: 420px;
+      opacity: 0.95;
+      white-space: pre-line;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* MAIN CONTENT */
+    .content-card {
+      background: var(--card);
+      border-radius: var(--radius-lg);
+      padding: 26px 22px 24px;
+      border: 1px solid rgba(182, 140, 110, 0.18);
+      box-shadow: var(--shadow-soft);
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+    }
+
+    @media (min-width: 768px) {
+      .content-card {
+        padding: 28px 30px 26px;
+        flex-direction: row;
+        align-items: flex-start;
+      }
+    }
+
+    .content-left {
+      flex: 1.1;
+    }
+
+    .content-right {
+      flex: 1;
+    }
+
+    .section-label {
+      font-size: 0.78rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text-sub);
+      margin-bottom: 8px;
+    }
+
+    .link-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+    }
+
+    @media (min-width: 520px) {
+      .link-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .link-block {
+      padding: 14px 16px;
+      border-radius: var(--radius-md);
+      border: 1px solid rgba(120, 90, 80, 0.18);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background: #fdfbf9;
+      transition:
+        transform 0.14s ease-out,
+        box-shadow 0.14s ease-out,
+        border-color 0.14s ease-out,
+        background-color 0.14s ease-out;
+    }
+
+    .link-block span.label {
+      font-size: 0.78rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      opacity: 0.7;
+      margin-bottom: 4px;
+    }
+
+    .link-block span.name {
+      font-size: 0.96rem;
+      font-weight: 500;
+    }
+
+    .link-block:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 28px rgba(80, 60, 50, 0.18);
+      border-color: rgba(150, 110, 95, 0.9);
+    }
+
+    .spotify {
+      background: var(--spotify-bg);
+    }
+
+    .apple {
+      background: var(--apple-bg);
+    }
+
+    .youtube {
+      background: var(--yt-bg);
+    }
+
+    .note {
+      margin-top: 16px;
+      font-size: 0.82rem;
+      color: var(--text-sub);
+      opacity: 0.9;
+    }
+
+    .right-text {
+      font-size: 0.86rem;
+      line-height: 1.7;
+      color: var(--text-sub);
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <section class="hero">
+      <div class="hero-eyebrow">E.CHO Creative Home</div>
+      <h1 class="hero-title">A small home of music<br>for those who listen closely.</h1>
+      <div class="hero-subtitle">Music · Healing · Memory · Story</div>
+      <p class="hero-text">
+A home for those moved by the echo —
+a place they are invited to, and
+always find their way back.
+      </p>
+    </section>
+
+    <section class="content-card">
+      <div class="content-left">
+        <div class="section-label">Listen</div>
+        <div class="link-grid">
+          <a
+            class="link-block spotify"
+            href="https://open.spotify.com/artist/6Ar4fb6JztM8u3qZFENLuD"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span class="label">stream on</span>
+            <span class="name">Spotify</span>
+          </a>
+
+          <a
+            class="link-block apple"
+            href="https://music.apple.com/kr/artist/e-cho/1851680455"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span class="label">listen on</span>
+            <span class="name">Apple Music</span>
+          </a>
+
+          <a
+            class="link-block youtube"
+            href="https://music.youtube.com/channel/UCxnb5d70VoubGp468bHbBdA"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span class="label">watch / listen on</span>
+            <span class="name">YouTube Music</span>
+          </a>
+        </div>
+
+        <p class="note">
+          More stories, scores, and quiet echoes will be added here over time.
+        </p>
+      </div>
+
+      <div class="content-right">
+        <p class="right-text">
+          This page is a simple front door — a small, quiet space that gathers
+          songs, memories, and healing stories under the name E.CHO.
+          <br><br>
+          Albums, liner notes, and writings will slowly find their places here,
+          as they are ready.
+        </p>
+      </div>
+    </section>
+  </div>
+</body>
+</html>
+
 
