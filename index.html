@@ -5,6 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>E.CHO Creative Home – Music · Healing · Memory · Story</title>
 
+  <!-- Optional: 조금 더 세련된 폰트 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
   <style>
     :root {
       /* metallic rose-gold palette */
@@ -13,83 +18,106 @@
       --text-main: #5a3328; /* deep rose-brown */
       --text-sub: #9b6c57;  /* soft rose-gold brown */
       --accent: #b9765b;    /* metallic rose-gold */
+      --accent-soft: #e9c3a8;
+      --shadow-soft: 0 14px 40px rgba(0, 0, 0, 0.08);
+      --radius-lg: 26px;
+      --radius-md: 18px;
     }
 
     * {
       box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
     body {
       margin: 0;
-      font-family: "Helvetica Neue", Arial, sans-serif;
-      background: var(--bg);
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+      background: radial-gradient(circle at top left, #fdf7f0 0, var(--bg) 40%, #f1e3d7 100%);
       color: var(--text-main);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
     }
 
     .wrap {
-      max-width: 920px;
+      max-width: 960px;
       margin: 0 auto;
-      padding: 32px 18px 48px;
+      padding: 32px 18px 56px;
     }
 
     /* HERO */
     .hero {
-      border-radius: 28px;
-      padding: 30px 26px 28px;
-      margin-bottom: 40px;
+      border-radius: var(--radius-lg);
+      padding: 32px 26px 28px;
+      margin-bottom: 34px;
       background: linear-gradient(
         135deg,
         #b57950 0%,
         #e9c3a8 40%,
-        #f8f0e6 100%
+        #fdf4eb 100%
       );
       color: #fff;
       position: relative;
       overflow: hidden;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      right: -80px;
+      top: -80px;
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.32);
+      opacity: 0.6;
     }
 
     .hero-title {
-      font-family: "Georgia", serif;
-      font-size: 36px;
-      letter-spacing: 4px;
-      margin: 0 0 6px;
+      font-family: "Playfair Display", "Georgia", serif;
+      font-size: 34px;
+      letter-spacing: 8px;
+      margin: 0 0 4px;
     }
 
     .hero-sub {
-      font-size: 15px;
-      letter-spacing: 3px;
+      font-size: 13px;
+      letter-spacing: 5px;
       text-transform: uppercase;
-      opacity: 0.92;
-      margin-bottom: 14px;
+      opacity: 0.96;
+      margin-bottom: 16px;
     }
 
     .hero-line {
-      width: 56px;
+      width: 72px;
       height: 1px;
-      background: rgba(255, 255, 255, 0.75);
-      margin-bottom: 16px;
+      background: rgba(255, 255, 255, 0.8);
+      margin-bottom: 18px;
     }
 
     .hero-summary {
       font-size: 15px;
-      line-height: 1.7;
-      opacity: 0.97;
+      line-height: 1.8;
+      opacity: 0.98;
       margin-bottom: 20px;
-      max-width: 460px;
+      max-width: 520px;
     }
 
-    .hero-icons {
-      display: flex;
-      gap: 18px;
-      font-size: 22px;
-      margin-bottom: 10px;
+    .hero-summary span {
+      font-style: italic;
     }
 
     .hero-tagline {
-      font-size: 17px; /* 크게 */
-      letter-spacing: 2px;
+      font-size: 18px;          /* 요청대로 더 크게 */
+      letter-spacing: 4px;
       text-transform: uppercase;
-      opacity: 0.98;
+      opacity: 0.99;
+      margin-bottom: 14px;
     }
 
     .hero-tagline span {
@@ -97,158 +125,55 @@
       margin: 0 3px;
     }
 
-    .hero-float {
-      position: absolute;
-      right: 26px;
-      bottom: 22px;
-      font-family: "Georgia", serif;
-      font-size: 18px;
-      letter-spacing: 3px;
-      color: rgba(255, 255, 255, 0.85);
-      writing-mode: vertical-rl;
-      text-transform: uppercase;
+    .hero-icons-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 14px;
+      opacity: 0.95;
     }
 
-    /* SECTIONS */
+    .hero-icons-label {
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 11px;
+      opacity: 0.84;
+    }
+
+    .hero-icons {
+      display: flex;
+      gap: 10px;
+      font-size: 18px;
+    }
+
+    .hero-float {
+      position: absolute;
+      right: 24px;
+      bottom: 20px;
+      font-family: "Playfair Display", serif;
+      font-size: 13px;
+      letter-spacing: 3px;
+      color: rgba(255, 255, 255, 0.8);
+      text-transform: uppercase;
+      writing-mode: vertical-rl;
+    }
+
+    /* SECTION TITLE */
     .section {
-      margin-top: 28px;
+      margin-top: 26px;
     }
 
     h2 {
-      font-family: "Georgia", serif;
-      font-size: 24px;
+      font-family: "Playfair Display", "Georgia", serif;
+      font-size: 22px;
       color: var(--accent);
-      margin: 0 0 8px;
+      margin: 0 0 6px;
       text-align: left;
     }
 
     .section-desc {
-      font-size: 14px;
+      font-size: 13px;
       color: var(--text-sub);
       margin-bottom: 16px;
-      text-align: left;
-    }
+      text
 
-    .card {
-      background: var(--card);
-      border-radius: 18px;
-      padding: 22px 20px 24px;
-      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.06);
-    }
-
-    iframe {
-      width: 100%;
-      border: none;
-      border-radius: 12px;
-      display: block;
-    }
-
-    footer {
-      margin-top: 46px;
-      font-size: 12px;
-      color: var(--text-sub);
-      text-align: center;
-    }
-
-    @media (max-width: 640px) {
-      .wrap {
-        padding: 20px 14px 36px;
-      }
-      .hero {
-        padding: 24px 18px 24px;
-      }
-      .hero-title {
-        font-size: 28px;
-      }
-      .hero-float {
-        display: none;
-      }
-    }
-  </style>
-</head>
-
-<body>
-  <div class="wrap">
-    <!-- HERO -->
-    <section class="hero">
-      <h1 class="hero-title">E.CHO</h1>
-      <div class="hero-sub">CREATIVE HOME</div>
-      <div class="hero-line"></div>
-
-      <div class="hero-summary">
-        A home for those moved by the echo —
-        a place they are invited to, and always find their way back.
-      </div>
-
-      <div class="hero-icons">
-        <span>🌸</span>
-        <span>✦</span>
-        <span>☾</span>
-        <span>❄️</span>
-      </div>
-
-      <div class="hero-tagline">
-        <span>MUSIC</span> ·
-        <span>HEALING</span> ·
-        <span>MEMORY</span> ·
-        <span>STORY</span>
-      </div>
-
-      <div class="hero-float">MUSIC · HEALING · MEMORY · STORY</div>
-    </section>
-
-    <!-- SPOTIFY -->
-    <section class="section">
-      <h2>Listen on Spotify</h2>
-      <p class="section-desc">
-        Discover E.CHO’s music and follow future releases on Spotify.
-      </p>
-      <div class="card">
-        <iframe
-          src="https://open.spotify.com/embed/artist/6Ar4fb6JztM8u3qZFENLuD?utm_source=generator"
-          height="380"
-          allow="autoplay; clipboard-write; encrypted-media; picture-in-picture"
-        ></iframe>
-      </div>
-    </section>
-
-    <!-- APPLE MUSIC -->
-    <section class="section">
-      <h2>Listen on Apple Music</h2>
-      <p class="section-desc">
-        Find E.CHO on Apple Music and add her music to your library.
-      </p>
-      <div class="card">
-        <iframe
-          allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write"
-          frameborder="0"
-          height="260"
-          style="width: 100%; max-width: 660px; overflow: hidden; border-radius: 12px;"
-          sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation"
-          src="https://embed.music.apple.com/kr/artist/e-cho/1851680455"
-        ></iframe>
-      </div>
-    </section>
-
-    <!-- YOUTUBE -->
-    <section class="section">
-      <h2>Watch on YouTube</h2>
-      <p class="section-desc">
-        Listen and watch E.CHO on YouTube.
-      </p>
-      <div class="card">
-        <iframe
-          height="315"
-          src="https://www.youtube.com/embed/ISO1vK4jAA0"
-          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-        ></iframe>
-      </div>
-    </section>
-
-    <footer>
-      © 2025 E.CHO Creative Home — All Rights Reserved.
-    </footer>
-  </div>
-</body>
-</html>
