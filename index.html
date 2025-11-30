@@ -101,7 +101,7 @@
     }
 
     .hero-summary {
-      font-size: 15px;
+      font-size: 17px;
       line-height: 1.8;
       opacity: 0.98;
       margin-bottom: 20px;
@@ -175,5 +175,240 @@
       font-size: 13px;
       color: var(--text-sub);
       margin-bottom: 16px;
-      text
+      text-align: left;
+      max-width: 520px;
+    }
+
+    /* PLATFORM GRID */
+    .platform-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-bottom: 10px;
+    }
+
+    .platform-card {
+      background: var(--card);
+      border-radius: var(--radius-md);
+      padding: 16px 14px 16px;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(185, 118, 91, 0.16);
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+    }
+
+    .platform-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 18px 42px rgba(0, 0, 0, 0.12);
+      border-color: rgba(185, 118, 91, 0.45);
+    }
+
+    .platform-name {
+      font-size: 13px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    .platform-desc {
+      font-size: 12px;
+      color: var(--text-sub);
+      line-height: 1.6;
+      flex: 1;
+    }
+
+    .btn-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      margin-top: 2px;
+      padding: 7px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(185, 118, 91, 0.35);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--accent);
+      background: linear-gradient(135deg, #fff7f1, #fbeee4);
+    }
+
+    .btn-link span.icon {
+      font-size: 14px;
+      transform: translateY(1px);
+    }
+
+    /* ABOUT / FOOTER */
+    .about-card {
+      background: var(--card);
+      border-radius: var(--radius-md);
+      padding: 20px 18px 18px;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(185, 118, 91, 0.12);
+      margin-top: 10px;
+      font-size: 13px;
+      color: var(--text-main);
+      line-height: 1.8;
+    }
+
+    .about-card p + p {
+      margin-top: 8px;
+    }
+
+    footer {
+      margin-top: 40px;
+      font-size: 12px;
+      color: var(--text-sub);
+      text-align: center;
+    }
+
+    footer span {
+      color: var(--accent);
+      font-weight: 500;
+    }
+
+    @media (max-width: 780px) {
+      .platform-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .wrap {
+        padding: 22px 14px 40px;
+      }
+      .hero {
+        padding: 24px 18px 24px;
+      }
+      .hero-title {
+        font-size: 28px;
+        letter-spacing: 6px;
+      }
+      .hero-float {
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <!-- HERO -->
+    <section class="hero">
+      <h1 class="hero-title hero-title-full">E.CHO CREATIVE HOME</h1>
+      <div class="hero-line"></div>
+
+      <div class="hero-summary">
+        A home for those moved by the echo —<br />
+        a place they are invited to, and always find their way back.
+      </div>
+
+      <div class="hero-tagline">
+        <span>MUSIC</span> ·
+        <span>HEALING</span> ·
+        <span>MEMORY</span> ·
+        <span>STORY</span>
+      </div>
+
+      <div class="hero-icons-row">
+        <div class="hero-icons-label">Seasons</div>
+        <div class="hero-icons">
+          <span>🌸</span>
+          <span>✦</span>
+          <span>☾</span>
+          <span>❄️</span>
+        </div>
+      </div>
+
+      <div class="hero-float">Music · Healing · Memory · Story</div>
+    </section>
+
+    <!-- PLATFORMS -->
+    <section class="section" id="listen">
+      <h2>Listen</h2>
+      <p class="section-desc">
+        Choose a platform you already use and follow E.CHO there.
+        New singles will keep unfolding, one by one.
+      </p>
+
+      <div class="platform-grid">
+        <!-- Spotify -->
+        <a
+          class="platform-card"
+          href="https://open.spotify.com/artist/6Ar4fb6JztM8u3qZFENLuD"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <div class="platform-name">Spotify</div>
+          <div class="platform-desc">
+            Stream the latest releases and add them to your playlists.
+          </div>
+          <div class="btn-link">
+            <span class="icon">➝</span>
+            <span>Open in Spotify</span>
+          </div>
+        </a>
+
+        <!-- Apple Music -->
+        <a
+          class="platform-card"
+          href="https://music.apple.com/kr/artist/e-cho/1851680455"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <div class="platform-name">Apple Music</div>
+          <div class="platform-desc">
+            Listen on Apple Music and keep the songs in your library.
+          </div>
+          <div class="btn-link">
+            <span class="icon">➝</span>
+            <span>Open in Apple</span>
+          </div>
+        </a>
+
+        <!-- YouTube Music -->
+        <a
+          class="platform-card"
+          href="https://music.youtube.com/playlist?list=OLAK5uy_mWM-YYMXtwW0VrX8gKMkBvnAYwtuQe6qo"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <div class="platform-name">YouTube Music</div>
+          <div class="platform-desc">
+            Play the album on YouTube Music, with video when available.
+          </div>
+          <div class="btn-link">
+            <span class="icon">➝</span>
+            <span>Open in YT Music</span>
+          </div>
+        </a>
+      </div>
+
+      <div class="about-card">
+        <p>
+          Some songs are written for big stages.
+          E.CHO writes for quieter hours:
+          driving home at night, doing dishes after a long day,
+          or lying awake a little longer than planned.
+        </p>
+        <p>
+          This single page is meant to stay simple –
+          a small, steady homepage for
+          <strong>music, healing, memory, and story</strong>,
+          even as every other platform keeps changing.
+        </p>
+      </div>
+    </section>
+
+    <footer>
+      <span>© 2025 E.CHO Creative Home.</span>
+      &nbsp;All songs & words by EUN&nbsp;CHO.
+    </footer>
+  </div>
+</body>
+</html>
+
+    
 
