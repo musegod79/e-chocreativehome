@@ -54,12 +54,8 @@
       border-radius: var(--radius-lg);
       padding: 32px 26px 28px;
       margin-bottom: 34px;
-      background: linear-gradient(
-        135deg,
-        #b57950 80%,
-        #e9c3a8 90%,
-        #fdf4eb 100%
-      );
+      /* 그라데이션 제거하고 단색으로 조금 더 짙게 */
+      background: #b57950;
       color: #fff;
       position: relative;
       overflow: hidden;
@@ -259,6 +255,37 @@
       font-weight: 500;
     }
 
+    /* ▼ 플랫폼별 색상 커스텀 -------------------------------------------------- */
+
+    /* Spotify – 세이지 그린 계열 */
+    .platform-card.spotify {
+      border-color: rgba(29, 185, 84, 0.28);
+      background: linear-gradient(135deg, #ffffff, #eef9f2);
+    }
+    .platform-card.spotify .platform-name {
+      color: #1db954;
+    }
+
+    /* Apple Music – 소프트 체리 로즈 */
+    .platform-card.apple {
+      border-color: rgba(250, 46, 87, 0.28);
+      background: linear-gradient(135deg, #ffffff, #faeef2);
+    }
+    .platform-card.apple .platform-name {
+      color: #fa2e57;
+    }
+
+    /* YouTube Music – 톤다운 레드 */
+    .platform-card.youtube {
+      border-color: rgba(255, 0, 0, 0.22);
+      background: linear-gradient(135deg, #ffffff, #fdeaea);
+    }
+    .platform-card.youtube .platform-name {
+      color: #d62828;
+    }
+
+    /* ---------------------------------------------------------------------- */
+
     @media (max-width: 780px) {
       .platform-grid {
         grid-template-columns: 1fr;
@@ -327,7 +354,7 @@
       <div class="platform-grid">
         <!-- Spotify -->
         <a
-          class="platform-card"
+          class="platform-card spotify"
           href="https://open.spotify.com/artist/6Ar4fb6JztM8u3qZFENLuD"
           target="_blank"
           rel="noopener noreferrer"
@@ -344,7 +371,7 @@
 
         <!-- Apple Music -->
         <a
-          class="platform-card"
+          class="platform-card apple"
           href="https://music.apple.com/kr/artist/e-cho/1851680455"
           target="_blank"
           rel="noopener noreferrer"
@@ -361,7 +388,7 @@
 
         <!-- YouTube Music -->
         <a
-          class="platform-card"
+          class="platform-card youtube"
           href="https://music.youtube.com/channel/UCxnb5d70VoubGp468bHbBdA"
           target="_blank"
           rel="noopener noreferrer"
